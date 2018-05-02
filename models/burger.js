@@ -5,7 +5,21 @@ var burgers = {
     orm.selectAll("burgers", function(res) {
       cb(res);
     });
-    //console.log(orm.selectAll("burgers"));
+  },
+
+  create: function(burgerType, cb) {
+    var burgerType = burgerType;
+    console.log(burgerType);
+    orm.create("burgers", burgerType, function(result) {
+      cb(result);
+    });
+  },
+
+  update: function(condition, cb) {
+    console.log(condition);
+    orm.update("burgers", condition, function(res) {
+      cb(res);
+    });
   },
 };
 
