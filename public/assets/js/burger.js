@@ -1,4 +1,16 @@
 $(function() {
+  $(".devour").on("click", function(event) {
+    event.preventDefault();
+    var id = { id: $(this).attr("id") };
+
+    $.ajax("/", {
+      type: "PUT",
+      data: id,
+    }).then(() => {
+      console.log("Updated Burger");
+      location.reload();
+    });
+  });
   $("#submit").on("click", function(event) {
     event.preventDefault();
     var newBurger = {
@@ -16,21 +28,4 @@ $(function() {
       location.reload();
     });
   });
-
-  $(".devour").on("click", function(event) {
-    event.preventDefault();
-    var id = { id: $(this).attr("id") };
-
-    $.ajax("/", {
-      type: "PUT",
-      data: id,
-    }).then(function() {
-      console.log("Updated Burger");
-      location.reload();
-    });
-  });
-
-  function reload() {
-    $.get("/", function(data) {});
-  }
 });
