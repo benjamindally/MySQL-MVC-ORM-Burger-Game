@@ -16,13 +16,13 @@ routes.get("/", function(req, res) {
   });
 });
 
-routes.post("/", function(req, res) {
+routes.post("/index", function(req, res) {
   burgers.create([req.body.burgerType, req.body.devoured], function(result) {
     res.json({ id: result.insertId });
   });
 });
 
-routes.put("/", function(req, res) {
+routes.put("/index", function(req, res) {
   var condition = req.body.id;
 
   burgers.update(condition, function(result) {

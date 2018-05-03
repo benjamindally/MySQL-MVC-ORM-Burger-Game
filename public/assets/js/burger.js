@@ -3,7 +3,7 @@ $(function() {
     event.preventDefault();
     var id = { id: $(this).attr("id") };
 
-    $.ajax("/", {
+    $.ajax("/index", {
       type: "PUT",
       data: id,
     }).then(() => {
@@ -19,7 +19,7 @@ $(function() {
         .trim(),
       devoured: false,
     };
-    $.ajax("/", {
+    $.ajax("/index", {
       type: "POST",
       data: newBurger,
     }).then(function() {
