@@ -1,8 +1,8 @@
 var connection = require("../config/config.js");
 
 connection.connect(function(err) {
-  if (err) throw err;
-  console.log("connected as id " + connection.threadId);
+  // if (err) throw err;
+  // console.log("connected as id " + connection.threadId);
 });
 
 var orm = {
