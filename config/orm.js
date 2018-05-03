@@ -37,7 +37,6 @@ var orm = {
   },
 
   update: function(tableInput, id, cb) {
-    console.log(id);
     var queryString = "UPDATE " + tableInput + " SET ? WHERE ?;";
     connection.query(queryString, [{ devoured: true }, { ID: id }], function(
       err,

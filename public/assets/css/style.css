@@ -25,6 +25,10 @@ ul {
   width: 15rem;
 }
 
+.munched_wrapper {
+  margin: auto;
+  width: 15rem;
+}
 .create_burger {
   width: 15rem;
   margin: 0px auto 15px auto;

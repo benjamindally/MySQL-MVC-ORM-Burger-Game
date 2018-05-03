@@ -4,21 +4,35 @@
 </div>
 
 <div class="wrapper text-center">
-
 	<p class="text-center mx-auto">Enter a burger you want to eat in the form below or click "Munch" to try devour a burger.</p>
 	<form class="create_burger  card text-center">
 		<textarea id="burger_input" type="text"></textarea>
 		<br>
 		<button class="btn btn-primary" id="submit" type="submit">Submit</button>
 	</form>
-	<ul>
-		{{#each burgers}}
-		<li class="burger_wrapper card text-center">
-			<p>#{{this.ID}}</p>
-			<p>Burger: {{this.burger}}</p>
-			<button class="devour btn btn-primary" id={{this.ID}}>Munch</button>
-		</li>
+	<div class="row">
+		<div class="col-md-6 text-center">
+			<ul>{{#each burgers}} {{#unless this.devoured}}
+				<li class="burger_wrapper card text-center">
+					<p>#{{this.ID}}</p>
+					<p>Burger: {{this.burger}}</p>
+					<button class="devour btn btn-primary" id={{this.ID}}>Munch</button>
+				</li>
+				{{/unless}} {{/each}}
+			</ul>
+		</div>
+		<div class="col-md-6 text-center">
+			<ul>
+				{{#each burgers}} {{#if this.devoured}}
+				<li class="munched_wrapper card">
+					<p>#{{this.ID}}</p>
+					<p>Burger: {{this.burger}}</p>
+					<p>Are you all shook up from that great burger?</p>
+				</li>
 
-		{{/each}}
-	</ul>
+				{{/if}} {{/each}}
+			</ul>
+		</div>
+
+	</div>
 </div>

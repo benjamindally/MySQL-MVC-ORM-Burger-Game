@@ -7,12 +7,12 @@ $(function() {
         .trim(),
       devoured: false,
     };
-    console.log(newBurger);
     $.ajax("/", {
       type: "POST",
       data: newBurger,
     }).then(function() {
       console.log("new burger added");
+      $("#burger_input").val("");
       location.reload();
     });
   });
@@ -29,4 +29,8 @@ $(function() {
       location.reload();
     });
   });
+
+  function reload() {
+    $.get("/", function(data) {});
+  }
 });

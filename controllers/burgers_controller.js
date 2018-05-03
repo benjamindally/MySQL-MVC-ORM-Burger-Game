@@ -11,7 +11,7 @@ routes.get("/", function(req, res) {
     var hbsObject = {
       burgers: data,
     };
-    console.log(hbsObject);
+
     res.render("index", hbsObject);
   });
 });
@@ -23,8 +23,8 @@ routes.post("/", function(req, res) {
 });
 
 routes.put("/", function(req, res) {
-  console.log(req.body);
   var condition = req.body.id;
+
   burgers.update(condition, function(result) {
     if (result.changedRows === 0) {
       return res.status(404);
