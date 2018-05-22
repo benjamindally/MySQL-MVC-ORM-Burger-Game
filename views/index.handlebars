@@ -12,6 +12,8 @@
 	</form>
 	<div class="row">
 		<div class="col-md-6 text-center">
+			{{!-- This is where the handlebars will get the information supplied from the render on the burgers_controller page. It only
+			displays those burgers that have a true value in the devoured section of the database for the burger--}}
 			<ul>{{#each burgers}} {{#unless this.devoured}}
 				<li class="burger_wrapper card text-center">
 					<p>#{{this.ID}}</p>
@@ -23,7 +25,8 @@
 		</div>
 		<div class="col-md-6 text-center">
 			<ul>
-				{{#each burgers}} {{#if this.devoured}}
+				{{!-- this shows all the burgers that have been "devoured". It only displays those burgers that have a true value in the
+				devoured section of the database for the burger --}} {{#each burgers}} {{#if this.devoured}}
 				<li class="munched_wrapper card">
 					<p>#{{this.ID}}</p>
 					<p>Burger: {{this.burger}}</p>
